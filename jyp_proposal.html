@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Howley Place - 高端翻新提案</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.2em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .hero .edition {
+            font-size: 0.9em;
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: #1a1a1a;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d4af37;
+            font-weight: 400;
+        }
+        
+        .bilingual {
+            margin-bottom: 20px;
+        }
+        
+        .bilingual .en {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        
+        .assessment {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+        
+        .assessment h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .assessment ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .assessment li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .assessment li:before {
+            content: "▪";
+            color: #d4af37;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        .why-jyp {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+        
+        .feature h3 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+        
+        .feature p {
+            font-size: 0.9em;
+            color: #ccc;
+            line-height: 1.5;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .plan-header {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .plan-header.a1 {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+        
+        .plan-header.a2 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);
+        }
+        
+        .plan-header h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .plan-header .duration {
+            color: #d4af37;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .plan-header .price {
+            color: white;
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .plan-header .target {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .plan-body {
+            padding: 40px 30px;
+        }
+        
+        .plan-body h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .plan-body ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .plan-body li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #555;
+        }
+        
+        .plan-body li:before {
+            content: "✓";
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            left: 0;
+        }
+        
+        .plan-body .excluded li:before {
+            content: "✗";
+            color: #999;
+        }
+        
+        .summary {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .summary strong {
+            color: #1a1a1a;
+            font-size: 1.1em;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .timeline-item .number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #d4af37 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .next-steps h2 {
+            color: #d4af37;
+            border-bottom-color: #d4af37;
+        }
+        
+        .next-steps ol {
+            counter-reset: steps;
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .next-steps li {
+            counter-increment: steps;
+            padding: 20px 20px 20px 70px;
+            position: relative;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+        }
+        
+        .next-steps li:before {
+            content: counter(steps);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #d4af37;
+            color: #1a1a1a;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer .logo {
+            font-size: 2em;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .footer .tagline {
+            color: #d4af37;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .plan {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>18 Howley Place, London W2</h1>
+        <div class="subtitle">高端翻新提案 · Premium Renovation Proposal</div>
+        <div class="edition">Black & Gold Edition · 精品住宅精修体系</div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>致谢与项目背景 · Project Introduction</h2>
+            <div class="bilingual">
+                <p>感谢您委托 <strong>JYP Property Solution Ltd</strong> 评估与规划 18 Howley Place, London W2 的翻新与精修工作。</p>
+                <p class="en">Thank you for entrusting JYP Property Solution Ltd to evaluate and plan the renovation works for 18 Howley Place, London W2.</p>
+            </div>
+            <div class="bilingual">
+                <p>我们深知这类伦敦 Period Townhouse 的珍贵性,其优雅的比例、原有木作线条、结构层次与自然采光,都决定了它具备成为精品住宅的高度潜力。</p>
+                <p class="en">We understand the exceptional value of London Period Townhouses - their elegant proportions, original timber details, structural integrity, and natural light create outstanding potential for premium residential transformation.</p>
+            </div>
+            <div class="bilingual">
+                <p>我们非常期待能以 JYP 的<strong>高端住宅精修体系</strong>,帮助您将这套房子从"现状可居"提升为"精品级完成度"。</p>
+                <p class="en">We are excited to apply JYP's Premium Residential Refinement System to elevate this property from "habitable condition" to "boutique-level perfection".</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>专业评估 · Professional Assessment</h2>
+            <p>根据您提供的视频、室内照片与现场情况评估,我们发现以下需要改善的方面:</p>
+            <p class="en" style="color: #666; font-size: 0.9em; margin-top: 5px;">Based on the videos, interior photos, and site evaluation you provided, we have identified the following areas requiring improvement:</p>
+            
+            <div class="assessment">
+                <h3>当前状态 Current Condition</h3>
+                <ul>
+                    <li>墙面与天花漆面粗糙、颗粒感明显(缺乏 Period Property 应有的平整度)</li>
+                    <li>门框、门扇、线条收口粗糙(需重做打磨与高端喷涂)</li>
+                    <li>木作表面不均,缺乏光洁度</li>
+                    <li>楼梯扶手、踢脚线漆面老化</li>
+                    <li>部分柜体需要重新调水平、合页与收口调整</li>
+                    <li>Entrance 天花存在渗水痕迹需修复</li>
+                </ul>
+            </div>
+            
+            <div class="assessment">
+                <h3>我们的判断 Our Assessment</h3>
+                <p style="font-size: 1.1em; line-height: 1.8;">
+                    <strong>18 Howley Place 完全具备成为一套 W2 精品住宅的条件</strong>,若进行专业的 Period 精修,可以显著提升整套房的品质价值与市场表现力。
+                </p>
+                <p class="en" style="color: #666; margin-top: 10px;">
+                    18 Howley Place has all the qualities to become a premium W2 residence. With professional Period refinement, we can significantly enhance the property's quality, value, and market appeal.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>为什么选择 JYP？ · Why Choose JYP?</h2>
+            
+            <div class="why-jyp">
+                <div class="feature">
+                    <div class="icon">🏛️</div>
+                    <h3>Period Property 专家</h3>
+                    <p>专注伦敦 1-3 区 Period Townhouse 精修项目,熟悉工艺标准、结构逻辑与收口要求</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="icon">🔧</div>
+                    <h3>全链条服务</h3>
+                    <p>咨询 + 设计 + 精修 + 监理完整能力,源自英国工程咨询体系</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="icon">👥</div>
+                    <h3>专业团队</h3>
+                    <p>10+ 年地产开发经验,RCIS 工程监理,结构与建造顾问,本土施工团队</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="icon">📊</div>
+                    <h3>丰富经验</h3>
+                    <p>50M+ GBP 总项目规模,63+ 住宅精修案例,熟悉 Regent's Park / Victoria / Maida Vale 等区域</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="icon">💎</div>
+                    <h3>精品理念</h3>
+                    <p>目标不是"装修",而是打造精品住宅的完成度,所有细节经得起近距离审视</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="icon">✨</div>
+                    <h3>细节至上</h3>
+                    <p>从墙面平整度、光影落点、线条顺直、木作打磨到漆面质感,追求极致品质</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>方案对比 · Proposal Comparison</h2>
+            
+            <div class="comparison">
+                <div class="plan">
+                    <div class="plan-header a1">
+                        <h3>A1 快速焕新方案</h3>
+                        <div class="duration">Quick Refresh · 3 周</div>
+                        <div class="price">£19,500 - £24,500</div>
+                        <div class="target">适合: 快速出租 · 预算优化 · 短周期提升</div>
+                    </div>
+                    
+                    <div class="plan-body">
+                        <h4>包含内容 Included</h4>
+                        <ul>
+                            <li>全屋所有木作(扶手、踢脚、柜体)重新打磨 + 刷漆(Dulux)</li>
+                            <li>Entrance 天花渗水区域修复</li>
+                            <li>墙面局部修补(非全屋精修)</li>
+                            <li>部分区域的油漆翻新</li>
+                        </ul>
+                        
+                        <h4 class="excluded">不包含 Excluded</h4>
+                        <ul class="excluded">
+                            <li>全屋墙面天花大面积精修</li>
+                            <li>门框/门扇深度打磨与高端喷漆</li>
+                            <li>柜体结构调平、对齐修正</li>
+                            <li>系统(水/电/暖)检查</li>
+                            <li>深度清洁与家具落位</li>
+                        </ul>
+                        
+                        <div class="summary">
+                            <strong>总结 Summary:</strong><br>
+                            低成本 + 3 周快速出租回报。提升视觉品质但不过度施工。<br>
+                            <span class="en">Cost-effective solution for quick rental returns with visual quality improvement.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="plan">
+                    <div class="plan-header a2">
+                        <h3>A2 高端精修方案</h3>
+                        <div class="duration">Premium Refinement · 5 周</div>
+                        <div class="price">£39,500 - £49,500</div>
+                        <div class="target">适合: 自住品质 · Period Property 完成度 · 资产价值提升</div>
+                    </div>
+                    
+                    <div class="plan-body">
+                        <h4>包含内容 Included</h4>
+                        <ul>
+                            <li>全屋墙面 + 天花精修(平整度提升 + Little Greene 高端涂装)</li>
+                            <li>全屋门框、门扇精修(专业打磨 + 精细喷涂)</li>
+                            <li>专业木工调平、调缝、柜体开合与收口修整</li>
+                            <li>水、电、暖系统巡检与一般性修复</li>
+                            <li>楼梯地毯铺设(人工) + 外门重新喷涂</li>
+                            <li>项目收尾: 深度清洁、家具位置调整、垃圾清运、外窗地面清洁</li>
+                        </ul>
+                        
+                        <h4 class="excluded">不包含 Excluded</h4>
+                        <ul class="excluded">
+                            <li>大规模土建工程</li>
+                            <li>新浴室/厨房等重工程</li>
+                        </ul>
+                        
+                        <div class="summary">
+                            <strong>总结 Summary:</strong><br>
+                            将 18 Howley Place 升级为精品住宅标准,完成度显著提升,未来 7-10 年无需再大修。<br>
+                            <span class="en">Elevates the property to boutique standard with significantly enhanced finish quality, requiring no major works for 7-10 years.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>施工周期 · Construction Timeline</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="number">A1</div>
+                    <h4>快速焕新</h4>
+                    <p>3 周<br>2-3 名工人</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="number">A2</div>
+                    <h4>高端精修</h4>
+                    <p>5 周<br>4-6 名工人</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="next-steps">
+            <h2>下一步与合作流程 · Next Steps & Process</h2>
+            <ol>
+                <li>现场复核与材料清单确认<br><span class="en">Site verification and materials list confirmation</span></li>
+                <li>最终报价单确认与签署<br><span class="en">Final quotation confirmation and signing</span></li>
+                <li>排期、进场、临时保护<br><span class="en">Scheduling, mobilization, and temporary protection</span></li>
+                <li>每周进度汇报(图片 + 视频)<br><span class="en">Weekly progress reports (photos + videos)</span></li>
+                <li>工程验收与交付<br><span class="en">Inspection and handover</span></li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="logo">JYP</div>
+        <div class="tagline">Property Solution Ltd</div>
+        <p style="margin-top: 20px;">英国菁英地产项目咨询管理<br>Specialising in Real Estate Investment Consulting, Development, Renovation & Construction</p>
+        <p style="margin-top: 20px; color: #999;">www.thejyp.com</p>
+    </div>
+</body>
+</html>
